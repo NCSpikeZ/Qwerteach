@@ -34,8 +34,8 @@
       <p class="sorry-text">Le site n'accepte actuellement plus de nouvelles inscriptions pour des raisons organisationnelles. Notre entreprise se concentre sur d'autres projets pour le moment.</p>
       <p class="sorry-text">Nous vous invitons à lire notre FAQ pour plus de précision !</p>
       <div class="buttons-wrapper">
-        <button class="custom-btn faq-btn">FAQ</button>
-        <button class="custom-btn register-student-btn">S'inscrire&nbsp;en&nbsp;tant&nbsp;qu'élève</button>
+        <a href="https://qwerteach.com/faq/students/global/what-can-i-do" target="_blank" class="custom-btn faq-btn">FAQ</a>
+        <a href="https://app.qwerteach.com/users/sign_up" target="_blank" class="custom-btn register-student-btn">S'inscrire&nbsp;en&nbsp;tant&nbsp;qu'élève</a>
       </div>
     </section>
     <div class="svg-container">
@@ -86,6 +86,14 @@ p {
 
 .burger-menu {
   display: none;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu.active {
+  transform: rotate(90deg);
+  font-size: 32px;
+  margin-top: 8px;
+  color: rgb(209, 65, 65);
 }
 
 .nav-links li a {
@@ -157,7 +165,7 @@ p {
 
 .sorry-text {
   font-size: 1vw;
-  max-width: 25vw;
+  max-width: 60ch;
   font-weight: 400;
   line-height: 1.15;
   text-align: left;
@@ -171,6 +179,10 @@ p {
   align-items: center;
   margin-top: 2vh;
   gap: 1vw;
+}
+
+.buttons-wrapper a {
+  text-decoration: none;
 }
 
 .custom-btn {
@@ -216,7 +228,7 @@ p {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1100px) {
   body {
     font-size: 16px;
   }
@@ -238,7 +250,7 @@ p {
   }
 
   .buttons-wrapper {
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
   }
 
   .logo {
@@ -253,7 +265,6 @@ p {
 
   .sorry-text {
     font-size: 1rem;
-    max-width: initial;
   }
 
   .register-btn,
@@ -266,7 +277,7 @@ p {
   }
 
   .login-btn {
-    margin-bottom: 20vh;
+    margin-bottom: 100vh;
   }
 
   .custom-btn {
@@ -316,6 +327,7 @@ p {
     cursor: pointer;
     text-align: left;
     padding: 10px;
+    transition: transform 0.3s ease;
   }
 
   .menu.active {
@@ -326,6 +338,32 @@ p {
     right: 20px;
     background-color: #f2f2f2;
     padding: 10px;
+  }
+}
+@media only screen and (min-width: 767px) and (max-width: 1100px) {
+  .content-wrapper{
+    margin-top: 20vh;
+    grid-template-columns: 2fr;
+  }
+
+  .svg-container{
+    grid-column: 2;
+    width: 45vw;
+    margin-left: 18px;
+  }
+}
+@media only screen and (min-width: 2500px) {
+  .logo{
+    font-size: 18px;
+  }
+  .nav-links{
+    font-size: 18px;
+  }
+  .register-btn, .login-btn{
+    padding: 8px 20px;
+  }
+  .buttons {
+    font-size: 16px;
   }
 }
 </style>
